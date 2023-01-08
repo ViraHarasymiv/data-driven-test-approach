@@ -10,16 +10,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class PositiveTests {
+/**
+ * This class contains user's automated steps for the success logging.
+ *
+ * @author Vira Harasymiv
+ */
+public class PositiveLoginTest {
     @Test
     public void logInTest() {
         System.out.println("Starting logIn test");
-        // Create driver
+        // Create the driver
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        // pull up main page
+        // pull up the Home Page
         String url = "http://the-internet.herokuapp.com/";
         driver.get(url);
         System.out.println("Main page is opened.");

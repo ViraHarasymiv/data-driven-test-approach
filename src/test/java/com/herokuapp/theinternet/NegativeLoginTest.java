@@ -8,7 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class NegativeTests {
+/**
+ * This class contains user's automated steps for logging with the invalid data.
+ *
+ * @author Vira Harasymiv
+ */
+public class NegativeLoginTest {
     WebDriver driver;
 
     @Parameters({ "browser" })
