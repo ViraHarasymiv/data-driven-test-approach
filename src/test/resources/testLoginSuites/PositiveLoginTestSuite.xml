@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PositiveLoginTestSuite" verbose="1">
+
+    <test name="PositiveTest-chrome">
+        <parameter name="username" value="tomsmith"></parameter>
+        <parameter name="password" value="SuperSecretPassword!"></parameter>
+        <parameter name="expectedSuccessMessage" value="You logged into a secure area!"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.login_page_tests.PositiveLoginTest"/>
+        </classes>
+    </test>
+    <test name="PositiveTest-opera">
+        <parameter name="username" value="tomsmith"></parameter>
+        <parameter name="password" value="SuperSecretPassword!"></parameter>
+        <parameter name="expectedSuccessMessage" value="You logged into a secure area!"></parameter>
+        <parameter name="browser" value="opera"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.login_page_tests.PositiveLoginTest"/>
+        </classes>
+    </test>
+
+</suite>
