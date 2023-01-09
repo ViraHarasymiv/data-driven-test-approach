@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FullUITestSuite" verbose="1" parallel="tests" thread-count="4">
+
+    <test name="Checkboxes Tests">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.checkboxesPagesTests.CheckboxesPageTests" />
+        </classes>
+    </test>
+
+    <test name="NegativeLoginTest-chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.loginPageTests.NegativeLoginTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PositiveTest-chrome">
+        <parameter name="username" value="tomsmith"></parameter>
+        <parameter name="password" value="SuperSecretPassword!"></parameter>
+        <parameter name="expectedSuccessMessage" value="You logged into a secure area!"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.loginPageTests.PositiveLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="UploadTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.uploadTests.UploadTests" />
+        </classes>
+    </test>
+
+    <test name="DropdownTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.dropdownTests.DropdownTest" />
+        </classes>
+    </test>
+
+</suite>

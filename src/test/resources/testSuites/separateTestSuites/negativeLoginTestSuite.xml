@@ -1,18 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="NegativeLoginTestSuite" verbose="1" parallel = "tests" thread-count="2">
+<suite name="negativeLoginTestSuite" verbose="1" parallel = "tests" thread-count="2">
 
     <test name="NegativeLoginTest-chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.herokuapp.theinternet.login_page_tests.NegativeLoginTest">
-            </class>
-        </classes>
-    </test>
-    <test name="NegativeLoginTest-opera">
-        <parameter name="browser" value="opera"></parameter>
-        <classes>
-            <class name="com.herokuapp.theinternet.login_page_tests.NegativeLoginTest">
+            <class name="com.herokuapp.theinternet.tests.loginPageTests.NegativeLoginTest">
             </class>
         </classes>
     </test>

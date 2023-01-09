@@ -1,13 +1,14 @@
-package com.herokuapp.theinternet.pages;
+package com.herokuapp.theinternet.application.pages;
 
+import com.herokuapp.theinternet.application.locators.fileUploadPageLocators.FileUploadPageLocators;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FileUploaderPage extends BasePage{
-    private By choseFileFieldLocator = By.id("file-upload");
-    private By uploadButtonLocator = By.id("file-submit");
-    private By uploadedFilesLocator = By.id("uploaded-files");
+public class FileUploaderPage extends BasePage {
+    private By choseFileFieldLocator = FileUploadPageLocators.CHOSE_FILE_FIELD_LOCATOR.getPath();
+    private By uploadButtonLocator = FileUploadPageLocators.UPLOAD_BUTTON_LOCATOR.getPath();
+    private By uploadedFilesLocator = FileUploadPageLocators.UPLOADED_FILES_LOCATOR.getPath();
 
     public FileUploaderPage(WebDriver driver, Logger log) {
         super(driver, log);

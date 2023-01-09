@@ -1,6 +1,6 @@
-package com.herokuapp.theinternet.uploadtests;
+package com.herokuapp.theinternet.tests.uploadTests;
 
-import com.herokuapp.theinternet.pages.WelcomePage;
+import com.herokuapp.theinternet.application.pages.HomePage;
 import com.herokuapp.theinternet.runners.TestUtilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +10,7 @@ public class UploadTests extends TestUtilities {
     @Test(dataProvider = "files")
     public void fileUploadTest(int number, String fileName) {
         log.info("Starting fileUploadTest #" + number + " for " + fileName);
-        String fileNames = new WelcomePage(driver,log)
+        String fileNames = new HomePage(driver,log)
                 .openPage()
                 .clickFileUploadLink()
                 .selectFile(fileName)

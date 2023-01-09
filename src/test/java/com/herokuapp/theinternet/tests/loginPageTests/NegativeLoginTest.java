@@ -1,9 +1,8 @@
-package com.herokuapp.theinternet.login_page_tests;
+package com.herokuapp.theinternet.tests.loginPageTests;
 
-import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.WelcomePage;
+import com.herokuapp.theinternet.application.pages.HomePage;
 import com.herokuapp.theinternet.runners.BaseTest;
-import com.herokuapp.theinternet.utils.CsvDataProviders;
+import com.herokuapp.theinternet.application.utils.CsvDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -27,7 +26,7 @@ public class NegativeLoginTest extends BaseTest {
 
         log.info("Starting negativeLoginTest #" + number + " for " + description);
 
-        String message = new WelcomePage(driver,log)
+        String message = new HomePage(driver,log)
                 .openPage()
                 .clickFormAuthenticationLink()
                 .negativeLogIn(username,password)

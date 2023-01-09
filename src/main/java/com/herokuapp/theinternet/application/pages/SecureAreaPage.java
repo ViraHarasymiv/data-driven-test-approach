@@ -1,15 +1,15 @@
-package com.herokuapp.theinternet.pages;
+package com.herokuapp.theinternet.application.pages;
 
+import com.herokuapp.theinternet.application.locators.secureAreaPageLocators.SecureAreaPageLocators;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SecureAreaPage extends BasePage{
+public class SecureAreaPage extends BasePage {
     private String pageUrl = "http://the-internet.herokuapp.com/secure";
 
-    private By logOutButton = By.xpath("//a[@class='button secondary radius']");
-    private By message = By.id("flash-messages");
+    private By logOutButton = SecureAreaPageLocators.LOGIN_OUT_BUTTON.getPath();
+    private By message = SecureAreaPageLocators.MESSAGE.getPath();
 
     public SecureAreaPage(WebDriver driver, Logger log) {
         super(driver, log);

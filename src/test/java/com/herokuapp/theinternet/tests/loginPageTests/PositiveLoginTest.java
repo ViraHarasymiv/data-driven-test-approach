@@ -1,16 +1,9 @@
-package com.herokuapp.theinternet.login_page_tests;
+package com.herokuapp.theinternet.tests.loginPageTests;
 
-import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.SecureAreaPage;
-import com.herokuapp.theinternet.pages.WelcomePage;
+import com.herokuapp.theinternet.application.pages.HomePage;
+import com.herokuapp.theinternet.application.pages.LoginPage;
+import com.herokuapp.theinternet.application.pages.SecureAreaPage;
 import com.herokuapp.theinternet.runners.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -28,11 +21,11 @@ public class PositiveLoginTest extends BaseTest {
         log.info("Starting logIn test");
 
         //open main page
-        WelcomePage welcomePage = new WelcomePage(driver,log);
-        welcomePage.openPage();
+        HomePage homePage = new HomePage(driver,log);
+        homePage.openPage();
 
         // Click on Form Authentication link
-        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+        LoginPage loginPage = homePage.clickFormAuthenticationLink();
 
         // execute log in
         SecureAreaPage secureAreaPage = loginPage.logIn(username, password);

@@ -1,16 +1,16 @@
-package com.herokuapp.theinternet.pages;
+package com.herokuapp.theinternet.application.pages;
 
+import com.herokuapp.theinternet.application.locators.loginPageLocators.LoginPageLocators;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
-    private By usernameLocator = By.id("username");
-    private By passwordLocator = By.name("password");
-    private By logInButtonLocator = By.tagName("button");
-    private By errorMessageLocator = By.id("flash");
+    private By usernameLocator = LoginPageLocators.USERNAME_LOCATOR.getPath();
+    private By passwordLocator = LoginPageLocators.PASSWORD_LOCATOR.getPath();
+    private By logInButtonLocator = LoginPageLocators.LOGIN_BUTTON_LOCATOR.getPath();
+    private By errorMessageLocator = LoginPageLocators.ERROR_MESSAGE_LOCATOR.getPath();
 
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -34,7 +34,7 @@ public class LoginPage extends BasePage{
     }
     /** Wait for error message becomes visible on the page*/
     public String getErrorMessageText() {
-        waitForVisibilityOf(errorMessageLocator);
+        waitForVisibilityOfElement(errorMessageLocator);
         return find(errorMessageLocator).getText();
     }
 }

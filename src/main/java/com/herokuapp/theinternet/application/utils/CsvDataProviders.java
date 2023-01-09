@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet.utils;
+package com.herokuapp.theinternet.application.utils;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
