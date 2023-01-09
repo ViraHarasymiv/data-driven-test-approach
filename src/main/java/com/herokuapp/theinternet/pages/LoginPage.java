@@ -25,11 +25,12 @@ public class LoginPage extends BasePage{
         return new SecureAreaPage(driver, log);
     }
 
-    public void negativeLogIn(String username, String password) {
+    public LoginPage negativeLogIn(String username, String password) {
         log.info("Executing Negative LogIn with username [" + username + "] and password [" + password + "]");
         type(username, usernameLocator);
         type(password, passwordLocator);
         click(logInButtonLocator);
+        return this;
     }
     /** Wait for error message becomes visible on the page*/
     public String getErrorMessageText() {

@@ -3,13 +3,11 @@ package com.herokuapp.theinternet.login_page_tests;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import com.herokuapp.theinternet.runners.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import com.herokuapp.theinternet.utils.CsvDataProviders;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.util.Map;
 
 /**
  * This class contains user's automated steps for logging with the invalid data.
@@ -18,25 +16,22 @@ import org.testng.annotations.*;
  */
 public class NegativeLoginTest extends BaseTest {
 
-    @Parameters({ "username", "password", "expectedMessage" })
-    @Test(priority = 1)
-    public void negativeTest(String username, String password, String expectedMessage) {
-        log.info("Starting negativeTest");
+    @Test(priority = 1, dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class)
+    public void negativeLoginTest(Map<String, String> testData) {
+        //Data
+        String number = testData.get("number");
+        String username = testData.get("username");
+        String password = testData.get("password");
+        String expectedMessage = testData.get("expectedMessage");
+        String description = testData.get("description");
 
-        // open main page
-        WelcomePage welcomePage = new WelcomePage(driver, log);
-        welcomePage.openPage();
+        log.info("Starting negativeLoginTest #" + number + " for " + description);
 
-        // Click on Form Authentication link
-        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
-
-        // execute negative login
-        loginPage.negativeLogIn(username, password);
-
-        // wait for error message
-        String message = loginPage.getErrorMessageText();
-
-        // Verification
+        String message = new WelcomePage(driver,log)
+                .openPage()
+                .clickFormAuthenticationLink()
+                .negativeLogIn(username,password)
+                .getErrorMessageText();
         Assert.assertTrue(message.contains(expectedMessage), "Message doesn't contain expected text.");
     }
 }
