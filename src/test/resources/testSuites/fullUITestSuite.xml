@@ -38,4 +38,40 @@
         </classes>
     </test>
 
+    <test name="AlertsTests-chrome">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.alertstests.AlertsTests"></class>
+        </classes>
+    </test>
+
+    <test name="EditorTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.editortests.EditorTests" />
+        </classes>
+    </test>
+
+    <test name="WindowsTests">
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.windowstests.WindowsTests" />
+        </classes>
+    </test>
+
+    <test name="KeyPressesTests-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.keypressestests.KeyPressesTests">
+                <methods>
+                    <include name="pressKeyWithActionsTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HorizontalSliderTests-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.herokuapp.theinternet.tests.horizontalslidertests.HorizontalSliderTests" />
+        </classes>
+    </test>
+
 </suite>

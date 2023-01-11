@@ -12,6 +12,11 @@ public class HomePage extends BasePage {
     private By fileUploadLinkLocator = HomePageLocators.FILE_UPLOAD_LINK_LOCATOR.getPath();
     private By checkboxesLocator = HomePageLocators.CHECKBOXES_LOCATOR.getPath();
     private By dropdownLinkLocator = HomePageLocators.DROPDOWN_LINK_LOCATOR.getPath();
+    private By javaScriptAlertsLinkLocator = HomePageLocators.JAVA_SCRIPT_ALERTS_LINK_LOCATOR.getPath();
+    private By multipleWindowsLinkLocator = HomePageLocators.MULTIPLE_WINDOWS_LINK.getPath();
+    private By editorLinkLocator = HomePageLocators.EDITOR_LINK.getPath();
+    private By keyPresses = HomePageLocators.KEY_PRESSES.getPath();
+    private By horizontalSlider = HomePageLocators.HORIZONTAL_SLIDER.getPath();
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -50,5 +55,33 @@ public class HomePage extends BasePage {
         log.info("Clicking Dropdown link on Welcome Page");
         click(dropdownLinkLocator);
         return new DropdownPage(driver, log);
+    }
+
+    public JavaScriptAlertsPage clickJavaScriptAlertsLink() {
+        log.info("Clicking JavaScript Alerts link on Welcome Page");
+        click(javaScriptAlertsLinkLocator);
+        return new JavaScriptAlertsPage(driver, log);
+    }
+
+    public EditorPage clickWYSIWYGEditorLink() {
+        log.info("Clicking WYSIWYG Editor link on Welcome Page");
+        click(editorLinkLocator);
+        return new EditorPage(driver, log);
+    }
+
+    public WindowsPage clickMultipleWindowsLink() {
+        log.info("Clicking Multiple Windows link on Welcome Page");
+        click(multipleWindowsLinkLocator);
+        return new WindowsPage(driver, log);
+    }
+    public KeyPressesPage clickOnKeyPresses(){
+        log.info("Clicking on the Key Presses link");
+        click(keyPresses);
+        return new KeyPressesPage(driver,log);
+    }
+    public HorizontalSliderPage clickOnHorizontalSlider(){
+        log.info("Clicking on the Horizontal Slider link");
+        click(horizontalSlider);
+        return new HorizontalSliderPage(driver,log);
     }
 }
