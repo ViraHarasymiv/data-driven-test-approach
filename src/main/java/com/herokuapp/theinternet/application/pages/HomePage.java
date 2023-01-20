@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet.application.pages;
 
 import com.herokuapp.theinternet.application.locators.homePageLocators.HomePageLocators;
+import com.herokuapp.theinternet.application.locators.javaScriptAlertsPageLocators.JavaScriptAlertsPageLocators;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class HomePage extends BasePage {
     private By editorLinkLocator = HomePageLocators.EDITOR_LINK.getPath();
     private By keyPresses = HomePageLocators.KEY_PRESSES.getPath();
     private By horizontalSlider = HomePageLocators.HORIZONTAL_SLIDER.getPath();
+    private By javaScriptOnLoadEventError = HomePageLocators.JAVASCRIPT_ONLOAD_EVENT_ERROR.getPath();
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -79,9 +81,15 @@ public class HomePage extends BasePage {
         click(keyPresses);
         return new KeyPressesPage(driver,log);
     }
+
     public HorizontalSliderPage clickOnHorizontalSlider(){
-        log.info("Clicking on the Horizontal Slider link");
         click(horizontalSlider);
         return new HorizontalSliderPage(driver,log);
     }
+    public JSErrorPage clickOnJavaScriptOnLoadEventError(){
+        log.info("Clicking on the JavaScript OnLoad EventError link");
+        click(javaScriptOnLoadEventError);
+        return new JSErrorPage(driver,log);
+    }
+
 }

@@ -124,6 +124,7 @@ public class BasePage {
     protected void switchToFrame(By frameLocator) {
         driver.switchTo().frame(find(frameLocator));
     }
+
     /** Get title of current page */
     public String getCurrentPageTitle() {
         return driver.getTitle();
@@ -165,5 +166,17 @@ public class BasePage {
         log.info("Scrolling to the bottom of the page");
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+    /** Add cookie */
+    public void setCookie(Cookie ck) {
+        log.info("Adding cookie " + ck.getName());
+        driver.manage().addCookie(ck);
+        log.info("Cookie added");
+    }
+
+    /** Get cookie value using cookie name */
+    public String getCookie(String name) {
+        log.info("Getting value of cookie " + name);
+        return driver.manage().getCookieNamed(name).getValue();
     }
 }

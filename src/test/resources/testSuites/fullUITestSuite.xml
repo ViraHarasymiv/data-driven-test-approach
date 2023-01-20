@@ -11,7 +11,7 @@
     <test name="NegativeLoginTest-chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.herokuapp.theinternet.tests.loginPageTests.NegativeLoginTest">
+            <class name="loginPageTests.NegativeLoginTest">
             </class>
         </classes>
     </test>
@@ -22,7 +22,7 @@
         <parameter name="expectedSuccessMessage" value="You logged into a secure area!"></parameter>
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.herokuapp.theinternet.tests.loginPageTests.PositiveLoginTest"/>
+            <class name="loginPageTests.PositiveLoginTest"/>
         </classes>
     </test>
 

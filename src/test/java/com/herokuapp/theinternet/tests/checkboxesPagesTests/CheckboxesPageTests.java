@@ -1,7 +1,7 @@
 package com.herokuapp.theinternet.tests.checkboxesPagesTests;
 
 import com.herokuapp.theinternet.application.pages.HomePage;
-import com.herokuapp.theinternet.runners.TestUtilities;
+import com.herokuapp.theinternet.utils.TestUtilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

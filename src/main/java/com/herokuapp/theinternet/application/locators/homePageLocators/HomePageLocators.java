@@ -11,7 +11,8 @@ public enum HomePageLocators {
     MULTIPLE_WINDOWS_LINK(By.linkText("Multiple Windows")),
     EDITOR_LINK(By.linkText("WYSIWYG Editor")),
     KEY_PRESSES(By.linkText("Key Presses")),
-    HORIZONTAL_SLIDER(By.linkText("Horizontal Slider"));
+    HORIZONTAL_SLIDER(By.linkText("Horizontal Slider")),
+    JAVASCRIPT_ONLOAD_EVENT_ERROR(By.linkText("JavaScript onload event error"));
 
     private final By path;
     HomePageLocators(By path) {

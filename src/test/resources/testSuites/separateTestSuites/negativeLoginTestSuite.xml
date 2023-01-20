@@ -5,7 +5,7 @@
     <test name="NegativeLoginTest-chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.herokuapp.theinternet.tests.loginPageTests.NegativeLoginTest">
+            <class name="loginPageTests.NegativeLoginTest">
             </class>
         </classes>
     </test>

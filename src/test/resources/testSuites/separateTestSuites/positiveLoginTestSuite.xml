@@ -2,13 +2,14 @@
 
 <suite name="PositiveLoginTestSuite" verbose="1">
 
-    <test name="PositiveTest-chrome">
+    <test name="PositiveTest-chrome-without Profile">
         <parameter name="username" value="tomsmith"></parameter>
         <parameter name="password" value="SuperSecretPassword!"></parameter>
         <parameter name="expectedSuccessMessage" value="You logged into a secure area!"></parameter>
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.herokuapp.theinternet.tests.loginPageTests.PositiveLoginTest"/>
+            <class name="loginPageTests.PositiveLoginTest"/>
         </classes>
     </test>
+
 </suite>
